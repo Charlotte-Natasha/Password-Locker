@@ -1,6 +1,14 @@
-def store_password():
+import random
+import string
 
-  username = str(input("Your username: "))
+print(string.ascii_letters)
 
+#username
+username = str(input("Your username: "))
 
-website = str(input("Your website: "))
+#website
+website = str(input("Website: "))
+
+#password
+rand = "K34jndnks"
+print(rand.isalnum())
