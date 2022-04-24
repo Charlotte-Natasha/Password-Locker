@@ -27,7 +27,7 @@ def account_user(username, password):
     """
     Checks whether a user exists and the logs in the user
     """
-    check_user = Credentials.verify_user(username, password)
+    check_user = Credentials.account_user(username, password)
     return check_user
 
 
@@ -37,6 +37,41 @@ def new_credentials(account, username, password):
     """
     new_credential = Credentials(account, username, password)
     return new_credential
+
+
+def save_credentials(credentials):
+    """
+    saves credentials from the list
+    """
+    credentials.save_details()
+
+
+def display_account_details():
+    """
+    Returns all the saved account credentials
+    """
+    return Credentials.display_credentials()
+
+
+def delete_credential(credentials):
+    """
+    Function to delete a Credentials from credentials list
+    """
+    credentials.delete_credentials()
+
+
+def find_credential(account):
+    """
+    Function that finds a Credentials by an account name and returns the Credentials that belong to that account
+    """
+    return Credentials.find_credential(account)
+
+
+def check_credentials(account):
+    """
+    Function that check if a Credentials exists with that account name and return true or false
+    """
+    return Credentials.if_credential_exist(account)
 
 
 def generate_password():
@@ -89,8 +124,8 @@ def main():
                 enter_password = input()
 
             else:
-               print("Welcome to your account")
-               print("\n")
+                print("Welcome to your account")
+                print("\n")
 
         elif short_code == "lg":
             print("Welcome")
@@ -117,6 +152,7 @@ def main():
         elif short_code == 'ex':
             print("Thankyou for using Password-Locker. See you soon :)")
             break
+
         else:
             print("Wrong entry try again")
 
