@@ -31,7 +31,7 @@ class UserTest(unittest.TestCase):
         Test case to test if credential objects are saved
         :return:
         """
-        self.new_credentials.save_credentials()
+        self.new_user.save_credentials()
         self.assertEqual(len(Credentials.credentials_details), 1)
 
     def tearDown(self) :
@@ -46,7 +46,7 @@ class UserTest(unittest.TestCase):
         checks if we can save multiple credentials
         :return:
         """
-        self.new_credentials.save_credentials()
+        self.new_user.save_credentials()
         test_credentials = Credentials("Account", "User", "Password")
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credentials_details), 2)
@@ -59,16 +59,48 @@ class UserTest(unittest.TestCase):
         self.new_user.save_credentials()
         test_credentials = Credentials("Account", "User", "Password")
         test_credentials.save_credentials()
-        self.assertEqual(len(Credentials.credentials_details), 1)
+        self.assertEqual(len(Credentials.credentials_details), 2)
 
     def test_find_credentials_by_account(self):
         """
         checks to see if we can find a credential by account and display its information
         :return:
         """
-        self.new_credentials.save_credentials()
+        self.new_user.save_credentials()
         test_credentials = Credentials("Account", "User", "Password")
         test_credentials.save_credentials()
 
         found_credentials = Credentials.find_by_account("Account")
-        self.assertEqual(found_credentials.username,test_credentials.username)
+        self.assertEqual(found_credentials.username, test_credentials.username)
+
+    def test_credential_exists(self):
+        """
+        checks if it returns a boolean if we cannot find the credentials
+        :return:
+        """
+        self.new_user.save_credentials()
+        test_credentials = Credentials("Account", "User", "Password")
+        test_credentials.save_credentials()
+
+        credential_exists = Credentials.credential_exists("Account")
+        self.assertTrue(credential_exists)
+
+    def test_display_all_credentials(self):
+        """
+        returns list of all credentials
+        :return:
+        """
+        self.assertEqual(Credentials.display_credentials(), Credentials.credentials_details)
+
+    def test_copy_password(self):
+        """
+        confirms we are copying the account credentials from a found credential
+        :return:
+        """
+        self.new_user.save_credentials()
+        Credentials.copy_password("Instagram")
+
+        self.assertEqual(self.new_user.password)
+
+    if __name__ == '__main__':
+        unittest.main()

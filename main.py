@@ -37,6 +37,26 @@ class Credentials:
         password = string.hexdigits + "k&%)@#$"
         return ''.join(random.choice(password) for i in range(stringLength))
 
+    @classmethod
+    def find_by_account(cls, param):
+        pass
+
+    @classmethod
+    def credential_exists(cls, param):
+        pass
+
+    @classmethod
+    def display_credentials(cls):
+        pass
+
+    @classmethod
+    def credential_list(cls):
+        pass
+
+    @classmethod
+    def copy_password(cls, param):
+        pass
+
 #username
 #username = str(input("Your username: "))
 
