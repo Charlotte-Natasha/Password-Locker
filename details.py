@@ -87,10 +87,11 @@ def main():
                 print("Login Success")
                 print('\n')
 
-
-
-
-
+        elif short_code == 'ex':
+            print("Thankyou for using Password-Locker. See you soon :)")
+            break
+        else:
+            print("Wrong entry try again")
 
 
 if __name__ == '__main__':
