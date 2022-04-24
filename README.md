@@ -6,8 +6,3 @@ This is a python project made system that helps one create an account, log in to
 
 ### Technology used
 Python3.9
-
-### MIT Licence 
-https:/https://github.com/Charlotte-Natasha/Password-Locker/blob/master/LICENSE
-
-
