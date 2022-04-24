@@ -1,24 +1,36 @@
+import string
+
+
 class User:
+    user_details = []
+
     def __init__(self, website, username, password):
         self.website = website
         self.username = username
         self.password = password
 
-    def user_details(self):
-        print("My name is" + self.username)
+    def save_user(self):
+        User.user_details.append(self)
 
+    def show_user(close):
+        return close.user_details
 
+    def delete_user(self):
+        User.user_details.remove(self)
+
+    def generate_password(stringLength=10):
+        password = string.hexdigits
 
 #username
-username = str(input("Your username: "))
+#username = str(input("Your username: "))
 
 #website
-website = str(input("Website: "))
+#website = str(input("Website: "))
 
 #password
-rand = "K34jndnks"
-print(rand.isalnum())
+#rand = "K34jndnks"
+#print(rand.isalnum())
 
 
-def search():
-    pass
+#def search():
+    #pass
