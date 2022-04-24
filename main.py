@@ -1,3 +1,4 @@
+import random
 import string
 
 
@@ -33,7 +34,8 @@ class Credentials:
         Credentials.credentials_details.remove(self)
 
     def generate_password(stringLength=10):
-        password = string.hexdigits
+        password = string.hexdigits + "k&%)@#$"
+        return ''.join(random.choice(password) for i in range(stringLength))
 
 #username
 #username = str(input("Your username: "))
