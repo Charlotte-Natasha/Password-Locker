@@ -19,6 +19,7 @@ def show_user():
     """
     return User.show_user()
 
+
 def main():
     while True:
         print("Welcome to Password Locker!!")
@@ -31,20 +32,43 @@ def main():
             print('Create New Account')
             username = input("Provide username: ")
 
-            print("Create password")
+            #print("Create password")
             password = input("Create Password: ")
 
-            print("Confirm Password")
+            #print("Confirm Password")
             confirm_password = input("Confirm Password: ")
 
-    while confirm_password != password:
-        print("Invalid password. Did not match!!")
-        print("Enter your password")
-        password = input()
-        print("Confirm your password")
-        confirm_password = input()
-    else
-        print("Congrats. Your account was created successfully")
+            while confirm_password != password:
+                print("Invalid password. Did not match!!")
+                print("Enter your password")
+                password = input()
+                confirm_password = input()
+                print("Confirm your password")
+
+            else:
+                print("Congrats. {username} was created successfully")
+                print('\n')
+                print("Proceed to login")
+                print('Username')
+                enter_username = input()
+                print("Your password")
+                enter_password = input()
+
+            while enter_username != username or enter_password or password:
+                print("Invalid username or password")
+                print("Enter username")
+                enter_username = input()
+                print("Your password")
+                enter_password = input()
+
+            else:
+               print("{username}, Welcome to your account")
+               print("\n")
+
+          # elif short_code == "lg":
+               #print("Welcome")
+               #print("Enter your username")
+
 
 
 
