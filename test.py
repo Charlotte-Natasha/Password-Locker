@@ -59,4 +59,16 @@ class UserTest(unittest.TestCase):
         self.new_user.save_credentials()
         test_credentials = Credentials("Account", "User", "Password")
         test_credentials.save_credentials()
-        self.assertEqual(len(Credentials.credentials_details))
+        self.assertEqual(len(Credentials.credentials_details), 1)
+
+    def test_find_credentials_by_account(self):
+        """
+        checks to see if we can find a credential by account and display its information
+        :return:
+        """
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Account", "User", "Password")
+        test_credentials.save_credentials()
+
+        found_credentials = Credentials.find_by_account("Account")
+        self.assertEqual(found_credentials.username,test_credentials.username)
