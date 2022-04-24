@@ -46,7 +46,7 @@ def main():
                 print("Confirm your password")
 
             else:
-                print("Congrats. {username} was created successfully")
+                print("Congrats. Account was created successfully")
                 print('\n')
                 print("Proceed to login")
                 print('Username')
@@ -62,12 +62,25 @@ def main():
                 enter_password = input()
 
             else:
-               print("{username}, Welcome to your account")
+               print("Welcome to your account")
                print("\n")
 
-          # elif short_code == "lg":
-               #print("Welcome")
-               #print("Enter your username")
+        elif short_code == "lg":
+            print("Welcome")
+            print("Enter your username")
+            default_username = input()
+
+            print("Enter your password")
+            default_password = input()
+            print('\n')
+
+            while default_username != 'test' or default_username:
+                print("Wrong username or Password")
+                print("Enter user name")
+                default_username = input()
+
+                print("Enter pa")
+
 
 
 
