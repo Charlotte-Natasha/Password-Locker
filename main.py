@@ -4,8 +4,7 @@ import string
 class User:
     user_details = []
 
-    def __init__(self, website, username, password):
-        self.website = website
+    def __init__(self, username, password):
         self.username = username
         self.password = password
 
@@ -17,6 +16,21 @@ class User:
 
     def delete_user(self):
         User.user_details.remove(self)
+
+
+class Credentials:
+    credentials_details = []
+
+    def __init__(self, account, username, password):
+        self.account = account
+        self.username = username
+        self.password = password
+
+    def save_credentials(self):
+        Credentials.credentials_details.append(self)
+
+    def delete_credentials(self):
+        Credentials.credentials_details.remove(self)
 
     def generate_password(stringLength=10):
         password = string.hexdigits
