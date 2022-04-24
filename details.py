@@ -79,7 +79,13 @@ def main():
                 print("Enter user name")
                 default_username = input()
 
-                print("Enter pa")
+                print("Enter password")
+                default_password = input()
+                print('\n')
+
+            else:
+                print("Login Success")
+                print('\n')
 
 
 
