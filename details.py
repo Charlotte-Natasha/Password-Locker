@@ -23,6 +23,20 @@ def show_user():
     return User.show_user()
 
 
+def account_user(username, password):
+    """
+    Checks whether a user exists and the logs in the user
+    """
+    check_user = Credentials.verify_user(username, password)
+    return check_user
+
+
+def new_credentials(account, username, password):
+    """
+    Creates new credentials for the persons user accounts
+    """
+    new_credential = Credentials(account, username, password)
+    return new_credential
 
 
 def generate_password():
