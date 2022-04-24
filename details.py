@@ -31,11 +31,20 @@ def main():
             print('Create New Account')
             username = input("Provide username: ")
 
+            print("Create password")
             password = input("Create Password: ")
 
-            password = input("Confirm Password: ")
+            print("Confirm Password")
+            confirm_password = input("Confirm Password: ")
 
-
+    while confirm_password != password:
+        print("Invalid password. Did not match!!")
+        print("Enter your password")
+        password = input()
+        print("Confirm your password")
+        confirm_password = input()
+    else
+        print("Congrats. Your account was created successfully")
 
 
 
