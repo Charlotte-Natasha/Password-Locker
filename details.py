@@ -1,11 +1,13 @@
 from main import User, Credentials
 
+
 def add_new_user(username, password):
     """
     creating a new user from user class with a username and password
     """
-    new_user = User(username,password)
-    return  new_user
+    new_user = User(username, password)
+    return new_user
+
 
 def save_user(user):
     """
@@ -13,11 +15,22 @@ def save_user(user):
     """
     user.adduser()
 
+
 def show_user():
     """
     Function to display existing user
     """
     return User.show_user()
+
+
+
+
+def generate_password():
+    """
+    Generate a random password for the user
+    """
+    auto_password = Credentials.generate_password()
+    return auto_password
 
 
 def main():
